@@ -13,7 +13,7 @@ services:
       - PASSWORD=${PASSWORD:-secret_sauce}
       - DASHBOARD_URL=${DASHBOARD_URL:-/inventory.html}
       - TOKEN_EP=${TOKEN_EP:-submit.backtrace.io/UNIVERSE/TOKEN/json}
-      - DASHBOARD_PICTURE_URL=${DASHBOARD_PICTURE_URL:-/static/media/}
+      - DASHBOARD_PICTURE_URL=${DASHBOARD_PICTURE_URL:-/assets/}
       - ABOUT_URL=${ABOUT_URL:-https://saucelabs.com/}
     volumes:
       - ./src:/app/src
@@ -33,7 +33,7 @@ services:
       - PASSWORD=${PASSWORD:-secret_sauce}
       - DASHBOARD_URL=${DASHBOARD_URL:-/inventory.html}
       - TOKEN_EP=${TOKEN_EP:-submit.backtrace.io/UNIVERSE/TOKEN/json}
-      - DASHBOARD_PICTURE_URL=${DASHBOARD_PICTURE_URL:-/static/media/}
+      - DASHBOARD_PICTURE_URL=${DASHBOARD_PICTURE_URL:-/assets/}
       - ABOUT_URL=${ABOUT_URL:-https://saucelabs.com/}
     volumes:
       - ./playwright-report:/app/playwright-report
