@@ -1,0 +1,43 @@
+services:
+  playwright-tests:
+    healthcheck:
+      test: ["CMD", "npx", "playwright", "--version"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CI=true
+      - PASSWORD=${PASSWORD:-secret_sauce}
+      - DASHBOARD_URL=${DASHBOARD_URL:-}
+      - TOKEN_EP=${TOKEN_EP:-}
+      - DASHBOARD_PICTURE_URL=${DASHBOARD_PICTURE_URL:-}
+      - ABOUT_URL=${ABOUT_URL:-}
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
+      - ./allure-results:/app/allure-results
+      - ./allure-report:/app/allure-report
+    command: npm test
+
+  smoke-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CI=true
+      - PASSWORD=${PASSWORD:-secret_sauce}
+      - DASHBOARD_URL=${DASHBOARD_URL:-}
+      - TOKEN_EP=${TOKEN_EP:-}
+      - DASHBOARD_PICTURE_URL=${DASHBOARD_PICTURE_URL:-}
+      - ABOUT_URL=${ABOUT_URL:-}
+    volumes:
+      - ./playwright-report:/app/playwright-report
+      - ./test-results:/app/test-results
+    command: npm run test:smoke
+    profiles:
+      - smoke

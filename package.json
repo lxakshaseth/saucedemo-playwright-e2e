@@ -1,0 +1,57 @@
+{
+  "name": "saucedemo-e2e-playwright-ts",
+  "version": "1.0.0",
+  "description": "E2E Playwright project for www.saucedemo.com + TypeScript",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "test": "npx playwright test",
+    "test:smoke": "npx playwright test --grep smoke --project=chromium",
+    "test:security": "npx playwright test --grep security --project=chromium",
+    "test:regression": "npx playwright test --grep '@regression'",
+    "report": "playwright show-report",
+    "test:report": "playwright test && playwright show-report",
+    "clean": "rm -rf playwright-report test-results .playwright || del /s /q playwright-report test-results .playwright",
+    "docker:build": "docker build -t saucedemo-e2e .",
+    "docker:test": "docker-compose up --build playwright-tests",
+    "docker:smoke": "docker-compose --profile smoke up --build smoke-tests",
+    "docker:shell": "docker-compose run --rm playwright-tests sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnnyForever/saucedemo-playwright-e2e"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "e2e",
+    "testing",
+    "automation",
+    "saucedemo"
+  ],
+  "author": "Filip Gajdos",
+  "license": "MIT",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.1",
+    "@eslint/js": "^9.39.2",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^24.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
+    "allure-playwright": "^3.4.3",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-playwright": "^1.6.0",
+    "globals": "^17.0.0",
+    "jiti": "^2.6.1",
+    "prettier": "3.7.4",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.52.0"
+  },
+  "dependencies": {
+    "zod": "^4.3.6"
+  }
+}

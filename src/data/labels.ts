@@ -1,0 +1,35 @@
+export const Labels = {
+  errorMessages: {
+    passwordRequired: 'Epic sadface: Password is required',
+    usernameRequired: 'Epic sadface: Username is required',
+    lockedOutUser: 'Epic sadface: Sorry, this user has been locked out.',
+    nonExistingUser: 'Epic sadface: Username and password do not match any user in this service',
+    postalCodeRequired: 'Error: Postal Code is required',
+    firstNameRequired: 'Error: First Name is required',
+    lastNameRequired: 'Error: Last Name is required',
+  },
+  elementLabels: {
+    loginButton: 'Login',
+    pageHeader: 'Swag Labs',
+    productsTitle: 'Products',
+    addToCartButton: 'Add to cart',
+    removeButton: 'Remove',
+  },
+  sidebarElLabels: {
+    allItems: 'All Items',
+    about: 'About',
+    logout: 'Logout',
+    resetApp: 'Reset App State',
+  },
+  shoppingCart: {
+    yourCartTitle: 'Your Cart',
+    checkoutTitle: 'Checkout: Your Information',
+    overviewTitle: 'Checkout: Overview',
+    orderCompleteTitle: 'Checkout: Complete!',
+    completeOrder: 'Thank you for your order!',
+    completeOrderFullText: 'Your order has been dispatched, and will arrive just as fast as the pony can get there!',
+    goHomeBtn: 'Back Home',
+    checkoutButton: 'Checkout',
+    finishButton: 'Finish',
+  },
+} as const;
