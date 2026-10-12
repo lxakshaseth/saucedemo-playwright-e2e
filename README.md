@@ -120,7 +120,7 @@ Reports are written to mounted local directories. The full service also mounts s
 
 Both workflows build and run tests in Docker, upload Playwright HTML and JUnit reports, and publish test results.
 
-In the repository's **Settings > Secrets and variables > Actions**, configure:
+Both Docker services use the public SauceDemo defaults from `.env.example` when a value is missing or empty, so CI runs without additional repository configuration. To override these defaults, use **Settings > Secrets and variables > Actions**:
 
 - Secret: `SAUCE_PASSWORD` (the public demo password is `secret_sauce`)
 - Variables: `DASHBOARD_URL`, `TOKEN_EP`, `DASHBOARD_PICTURE_URL`, and `ABOUT_URL`, using the values in `.env.example`
