@@ -45,7 +45,7 @@ Create a `.env` file in the project root (use `.env.example` as template):
 PASSWORD='secret_sauce'
 DASHBOARD_URL='/inventory.html'
 TOKEN_EP='submit.backtrace.io/UNIVERSE/TOKEN/json'
-DASHBOARD_PICTURE_URL='/static/media/'
+DASHBOARD_PICTURE_URL='/assets/'
 ABOUT_URL='https://saucelabs.com/'
 ```
 
